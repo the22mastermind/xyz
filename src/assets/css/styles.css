@@ -1,0 +1,121 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333333;
+}
+
+.wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  text-transform: uppercase;
+}
+
+.content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.buttons-wrapper {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+
+.donation-btn {
+  background-color: #6bb8ab;
+  border: none;
+  color: #ffffff;
+  font-size: 14pt;
+  font-weight: 700;
+  padding: 16px;
+  border-radius: 10px;
+  width: 200px;
+  height: 80px;
+  margin: 12px;
+}
+
+.donation-btn:hover,
+.donation-btn:active,
+.donation-btn:focus {
+  background-color: #1583cc;
+  border: none;
+  cursor: pointer;
+}
+
+.form-wrapper {
+  width: 50%;
+}
+
+.inputs-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.input-field-wrapper {
+  width: 50%;
+}
+
+.input-field {
+  height: 46px;
+  width: 100%;
+  font-size: 12pt;
+  padding: 0px 12px;
+}
+
+.error-text {
+  color: #cd0400;
+  font-size: 12pt;
+}
+
+.input-checkbox-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+}
+
+.input-checkbox {
+  width: 20px;
+  height: 20px;
+  margin-right: 12px;
+}
+
+.label {
+  font-size: 12pt;
+}
+
+
+.submit-btn {
+  width: 100%;
+  border-radius: 10px;
+  height: 46px;
+  background-color: #2a2970;
+  border: none;
+  color: #ffffff;
+  font-size: 14pt;
+  font-weight: 700;
+}
+
+.submit-btn:hover,
+.submit-btn:focus {
+  background-color: #6bb8ab;
+  border: none;
+  cursor: pointer;
+}
