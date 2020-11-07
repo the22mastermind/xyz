@@ -1,8 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { DataContext } from '../../context/dataState';
 import Header from '../../components/header/Header';
+import Notification from '../../components/notification/Notification';
 
 const donationValues = [
   { id: 1, text: '$10', value: 10 },
@@ -15,32 +16,30 @@ const donationValues = [
 export default function DonationPage() {
   const [coverFees, setCoverFees] = useState(true);
   const { handleSubmit, register, errors } = useForm();
-  const { data, addDonation } = useContext(DataContext);
+  const { addDonation, message } = useContext(DataContext);
+  let history = useHistory();
 
-  async function onSubmit(values) {
-    await handleNext(values.customAmount);
+  function onSubmit(values) {
+    handleNext(values.customAmount);
   }
 
-  async function handleButton(values) {
-    await handleNext(values);
+  function handleButton(values) {
+    handleNext(values);
   }
 
   async function handleNext(selectedAmount) {
     const userInputs = {
-      amount: selectedAmount,
+      amount: parseInt(selectedAmount, 10),
       coverFees: coverFees,
-      isValid: true,
     };
     addDonation(userInputs);
-  }
-
-  if (data?.isValid) {
-    return <Redirect to="/checkout" />;
+    history.push('/checkout');
   }
 
   return (
     <>
       <div className="wrapper">
+        {message.status === 'success' ? <Notification /> : null}
         <Header text="Make a one-time gift today" />
         <div className="content">
           <div className="buttons-wrapper">
@@ -64,6 +63,10 @@ export default function DonationPage() {
                     type="text"
                     placeholder="Name your own amount, maybe $44?"
                     ref={register({
+                      required: {
+                        value: true,
+                        message: 'Please enter your own amount or choose from above'
+                      },
                       pattern: {
                         value: /^([0-9]{2,6})$/,
                         message: 'Please enter a valid amount',

@@ -5,6 +5,11 @@ const reducer = (state, action) => {
         ...state,
         data: action.payload,
       };
+    case 'SHOW_MESSAGE':
+      return {
+        ...state,
+        data: action.payload,
+      };
     default:
       return state;
   }

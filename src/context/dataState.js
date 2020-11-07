@@ -3,6 +3,7 @@ import reducer from './reducer';
 
 const initialState = {
   data: {},
+  message: {},
 };
 
 export const DataContext = createContext(initialState);
@@ -16,11 +17,20 @@ export const DataProvider = ({children}) => {
     });
   }
 
+  function showMessage(data) {
+    dispatch({
+      type: 'SHOW_MESSAGE',
+      payload: data,
+    });
+  }
+
   return (
     <DataContext.Provider
       value={{
         data: state.data,
         addDonation: addDonation,
+        message: state.message,
+        showMessage: showMessage,
       }}>
       {children}
     </DataContext.Provider>
