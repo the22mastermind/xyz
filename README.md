@@ -15,10 +15,11 @@ The payment methods available are VISA/Mastercard debit/credit card, PayPal, MTN
 Currently only VISA/Mastercard debit/credit card and PayPal are implemented.
 MTN Mobile Money and Airtel Money to be implemented in the future.
 
-Check out the live demo [here](https://google.com)
+Check out the live demo [here](https://pensive-hermann-8815b3.netlify.app/)
 
 
 #### Point of improvements
 - Use a CSS framework like Tailwind, Material-UI or Semantic-UI to reduce custom css
 - Implement responsiveness for different devices
 - Integrate webpack
+- Implement server-side client secret for Stripe
