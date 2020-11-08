@@ -35,7 +35,6 @@ export default function PayPal({ total }) {
         return <Redirect to="/" />
       },
       onError: (err) => {
-        // console.error('ERROR: ', err);
         const message = {
           status: 'error',
           title: 'An error occured while processing your payment. Please try again.',

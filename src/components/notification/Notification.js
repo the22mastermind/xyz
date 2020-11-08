@@ -8,8 +8,8 @@ export default function Notification() {
     <div className="notification">
       <p
         className={message.status === "success" ? "notification-title success-text" : "notification-title error-text"}>
-        {message?.title}</p>
-      <p className="notification-description">{message?.description}</p>
+        {message.title}</p>
+      <p className="notification-description">{message.description}</p>
     </div>
   );
 }
