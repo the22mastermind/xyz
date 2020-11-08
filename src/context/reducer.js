@@ -8,7 +8,7 @@ const reducer = (state, action) => {
     case 'SHOW_MESSAGE':
       return {
         ...state,
-        data: action.payload,
+        message: action.payload,
       };
     default:
       return state;

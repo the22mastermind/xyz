@@ -8,6 +8,11 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
+    "dotenv": "^8.2.0",
+    "history": "^5.0.0",
+    "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.10.1",
@@ -16,8 +21,8 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "start": "NODE_ENV=development parcel public/index.html",
+    "build": "NODE_ENV=production parcel build public/index.html --out-dir build --no-source-maps",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -38,5 +43,12 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-optional-chaining": "^7.12.1",
+    "babel-core": "^6.26.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1"
   }
 }

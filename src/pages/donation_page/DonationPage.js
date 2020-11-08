@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { Fragment, useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { DataContext } from '../../context/dataState';
@@ -37,7 +37,7 @@ export default function DonationPage() {
   }
 
   return (
-    <>
+    <Fragment>
       <div className="wrapper">
         {message.status === 'success' ? <Notification /> : null}
         <Header text="Make a one-time gift today" />
@@ -91,6 +91,6 @@ export default function DonationPage() {
           </div>
         </div>
       </div>
-    </>
+    </Fragment>
   );
 }
