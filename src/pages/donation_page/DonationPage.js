@@ -16,7 +16,7 @@ const donationValues = [
 export default function DonationPage() {
   const [coverFees, setCoverFees] = useState(true);
   const { handleSubmit, register, errors } = useForm();
-  const { addDonation, message } = useContext(DataContext);
+  const { message } = useContext(DataContext);
   let history = useHistory();
 
   function onSubmit(values) {
@@ -32,7 +32,7 @@ export default function DonationPage() {
       amount: parseInt(selectedAmount, 10),
       coverFees: coverFees,
     };
-    addDonation(userInputs);
+    sessionStorage.setItem('userInputs', JSON.stringify(userInputs));
     history.push('/checkout');
   }
 

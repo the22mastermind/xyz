@@ -9,7 +9,8 @@ import Notification from '../../components/notification/Notification';
 import StripeCheckout from '../../components/stripe/StripeCheckout';
 
 export default function CheckoutPage() {
-  const { data, message } = useContext(DataContext);
+  const { message } = useContext(DataContext);
+  const data = JSON.parse(sessionStorage.getItem('userInputs'));
   const [fees, setFees] = useState(0);
   const [total, setTotal] = useState(0);
   const [payWithCard, setPayWithCard] = useState(false);
